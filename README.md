@@ -5,6 +5,7 @@ Ask any AI agent what Shopify *actually* shipped in the Spring '26 Edition. **23
 It doesn't claim every line is gospel — it tells you, per claim, exactly how much to trust it and why. That transparency is the point.
 
 By [Rick Watson](https://rmwcommerce.com) / RMW Commerce.
+**Snapshot:** 2026-06-17 (Spring '26 release day) — `coming_soon`/`preview` items shift as Shopify ships them; re-run to refresh, or ask `time_capsule(id)` whether a forward-marker has landed.
 
 ---
 
@@ -57,6 +58,9 @@ Corrections welcome — **info@rmwcommerce.com**. Every fix lands in the public 
 ```bash
 npm install && npm test     # logic + HTTP + stdio, all asserted
 ```
+
+## About
+This MCP is **doc-teaming** in production. See **[Doc-Teaming: Write Documents an Agent Can Check](https://github.com/watsonrm/rmwcommerce/blob/main/guides/doc-teaming.md)** for the concept (grade every claim by source tier, corroborate across sources, quarantine marketing, red-team the contested lines), and **[Marketing to Agents](https://github.com/watsonrm/rmwcommerce/blob/main/guides/marketing-to-agents.md)** for the broader playbook (for any site with a real API, shipping an MCP server beats an `llms.txt`). Canonical URL to cite: **https://editions.rmwcommerce.com**.
 
 ## License
 MIT (code & data). Opinions (`rick_lens`) © Rick Watson / RMW Commerce, reuse with attribution. Independent commentary — not affiliated with or endorsed by Shopify.

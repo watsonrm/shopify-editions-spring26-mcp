@@ -9,7 +9,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "validate": "node -e \"const d=require('node:fs').readFileSync('dataset.json','utf8');const j=JSON.parse(d);console.log('ok',j.items.length,'items')\""
+    "serve": "node http.js",
+    "test": "node test.js && node test-stdio.js"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0"

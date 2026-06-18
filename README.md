@@ -16,16 +16,16 @@ https://editions.rmwcommerce.com
 direct: https://shopify-editions-spring26-mcp-1649969634.us-central1.run.app
 ```
 
-**Local — Claude Desktop, Claude Code, Cursor, Cline, Windsurf, Zed, Goose, VS Code:**
+**Local — Claude Desktop, Claude Code, Cursor, Cline, Windsurf, Zed, Goose, VS Code.** Clone once:
+```bash
+git clone https://github.com/watsonrm/shopify-editions-spring26-mcp && cd shopify-editions-spring26-mcp && npm install
+```
+then point your host's MCP config at it:
 ```json
-{
-  "mcpServers": {
-    "shopify-editions": { "command": "npx", "args": ["-y", "shopify-editions-spring26-mcp"] }
-  }
-}
+{ "mcpServers": { "shopify-editions": { "command": "node", "args": ["/absolute/path/to/shopify-editions-spring26-mcp/server.js"] } } }
 ```
 
-That's it. Per-surface steps for **every** host → **[INSTALL.md](INSTALL.md)**.
+Per-surface steps for **every** host → **[INSTALL.md](INSTALL.md)**.
 
 ---
 

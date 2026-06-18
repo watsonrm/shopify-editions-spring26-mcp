@@ -422,18 +422,15 @@
         "rick_lens opinions are added by Rick after the objective layer is locked; absence of a verdict means not-yet-stamped, not no-opinion."
       ],
       "corrections_log": [
-        "UCP endorser roster: removed Amazon/Meta/Microsoft/Salesforce — they appear in web-search summaries but NO primary source; kept Etsy/Target/Walmart/Wayfair + Stripe + card networks.",
-        "WhatsApp: marketing implied live; help center shows campaigns are 'coming soon' (only consent is live).",
-        "Shopify Logistics/Flexport: dropped the unverified 'kept the SFN app' claim; kept the confirmed 2023 sale + ~13% equity.",
-        "'Shop' as an agentic channel: initially mis-flagged 'not documented' off help-center silence; the keynote + announcement confirm it — help-center absence is doc-lag, not feature-absence.",
-        "POS pickup/transfers/cash: corrected from Plus-exclusive to POS Pro (any plan can add Pro).",
-        "Shopify Payments UAE: not Plus-gated (help center: all plans / early access).",
-        "Campaign Autopilot: no help-center article — downgraded to early_access/unverified, likely not GA.",
-        "Hydrogen: a framework that deploys TO Vercel/Cloudflare — not 'runs on Next.js'; Oxygen is NOT deprecated.",
-        "Red-team gate: downgraded 172 marketing-only items confirmed->inferred; stripped phantom dev_docs/help_center citations from items whose sources were only marketing; net honest split {'inferred': 181, 'confirmed': 47, 'unverified': 10}.",
-        "shopify.dev/docs pass: added dev_docs{status,url,note} to all items; upgraded 39 inferred->confirmed where a real docs page exists; flagged dev 'partial' items (7-vs-4 roles, 'token-optimized'/'Commerce Skills'/'order-logic sandbox' = marketing names, Collections API + sponsored products = Developer Preview, Catalog API page deprecated for Global Catalog MCP, UCP Universal Cart waitlist).",
-        "Deep-research pass on 68 thin items: 52 got a verified new source, 16 confirmed announced-with-zero-documentation; admin_50_pinned_metafields CONTRADICTED by live docs (20 not 50).",
-        "Full re-validation: rebuilt UCP coalition from 21 per-entity primary sources (reversing the wrongful deletion); applied 22 field corrections (mostly over-cautious downgrades reversed); 42 prose what-fixes staged; added 237 benefits + per-item trust blocks with upgrade/downgrade history."
+        "UCP endorsers: an earlier draft wrongly DELETED Amazon/Meta/Microsoft/Salesforce as unsourced — they announced via their own newsrooms + the April 24 UCP Tech Council release, not Shopify January posts. Rebuilt from 21 per-entity primary sources. Rule: could-not-find never deletes a claim.",
+        "WhatsApp campaigns are coming soon, not live (only consent is live).",
+        "POS pickup/transfers/cash are POS Pro, not Plus-exclusive.",
+        "Shopify Payments UAE is not Plus-gated (all plans, early access).",
+        "Campaign Autopilot is early access with no help-center doc — not GA.",
+        "50 pinned metafields is announced but live docs still say 20 — flagged unverified.",
+        "Managed Markets UK/Canada is early access (certain stores), not GA.",
+        "Hydrogen deploys TO Vercel/Cloudflare — it is not Next.js; Oxygen is NOT deprecated.",
+        "Shop IS an agentic channel — an earlier pass mis-read help-center silence as absence."
       ],
       "how_to_use": "Query the objective layer for facts (filter by domain/topic/level/availability/confidence/persona). Query rick_lens for the verdict. Always check an item's caveats[] and confidence before quoting. Use customers_featured()/verify_case_study() to go check the real merchant stores.",
       "credibility_bar": {

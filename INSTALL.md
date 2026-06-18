@@ -6,10 +6,14 @@ Two ways in. **Local (stdio)** for desktop/IDE agents, **Hosted (HTTP)** for web
 
 ## The two configs you'll reuse
 
-**Local (stdio)** — one npx command, no clone, no build:
-```json
-{ "command": "npx", "args": ["-y", "shopify-editions-spring26-mcp"] }
+**Local (stdio)** — clone the repo, then run it with Node:
+```bash
+git clone https://github.com/watsonrm/shopify-editions-spring26-mcp && cd shopify-editions-spring26-mcp && npm install
 ```
+```json
+{ "command": "node", "args": ["/absolute/path/to/shopify-editions-spring26-mcp/server.js"] }
+```
+> Not on npm yet — in the per-host configs below, use this `node /abs/path/server.js` form (not `npx`). Once the package is published, `npx -y shopify-editions-spring26-mcp` will work as a drop-in.
 
 **Hosted (HTTP)** — one URL:
 ```

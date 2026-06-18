@@ -10,7 +10,7 @@ By [Rick Watson](https://rmwcommerce.com) / RMW Commerce.
 
 ## Use it in 30 seconds
 
-**Hosted — anything that speaks MCP over HTTP (ChatGPT, web agents, curl):**
+**Hosted — no install, no Node, no npm. Just paste the URL** (ChatGPT, web agents, curl):
 ```
 https://editions.rmwcommerce.com
 direct: https://shopify-editions-spring26-mcp-1649969634.us-central1.run.app

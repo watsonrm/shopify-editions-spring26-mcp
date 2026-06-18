@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node server.js",
     "serve": "node http.js",
-    "test": "node test.js && node test-stdio.js"
+    "test": "node test.js && node test-http.js && node test-stdio.js"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0"

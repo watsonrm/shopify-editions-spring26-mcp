@@ -1,0 +1,33 @@
+NOTICE — scope of the license, rights, and disclaimers
+(The MIT license in LICENSE applies subject to the following.)
+
+SCOPE
+- The MIT grant covers the CODE, the DATA STRUCTURE/SCHEMA, and the RMW-authored
+  fields (rick_lens, analysis) ONLY.
+- Third-party verbatim excerpts embedded in the data (Shopify copy, merchant
+  quotes) are NOT licensed by RMW — reusers take them under their own fair-use
+  analysis.
+
+INFORMATION RIGHTS
+- ALL INFORMATION RIGHTS ARE DUE THEIR HOLDERS. All product information, feature
+  claims, names, descriptions, statistics, and quotations describing Shopify or
+  third-party products and merchants are the property of their respective rights
+  holders. Factual statements are not copyrightable; short quotations are included
+  as fair-use excerpts for commentary and criticism. Every claim is attributed to
+  its source(s) in each item and in SOURCES.md. No ownership of the underlying
+  information is claimed.
+
+NO WARRANTY OF ACCURACY / NO RELIANCE
+- This is informational commentary provided "as is." Verify every claim against
+  Shopify's primary sources before relying on it — especially deprecation
+  deadlines and availability/GA status. RMW is not liable for decisions made in
+  reliance on this dataset.
+
+OPINION & TRADEMARKS
+- The opinion layer (every rick_lens field) is the editorial work of Rick Watson /
+  RMW Commerce. Reuse with attribution to Rick Watson.
+- Trademarks (Shopify, Sidekick, Shop Pay, UCP, and all product names) belong to
+  their owners. This project is independent commentary, not affiliated with,
+  authorized by, or endorsed by Shopify Inc.
+
+Corrections welcome: info@rmwcommerce.com

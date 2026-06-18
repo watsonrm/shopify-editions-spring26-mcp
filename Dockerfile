@@ -2,7 +2,7 @@
 # Cloud Run injects $PORT; http.js already honors it. Dependency-free runtime (the SDK is only for stdio).
 FROM node:22-slim
 WORKDIR /app
-COPY lib.js http.js dataset.json ./
+COPY package.json lib.js http.js dataset.json ./
 ENV PORT=8080
 EXPOSE 8080
 CMD ["node", "http.js"]

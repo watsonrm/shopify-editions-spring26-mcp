@@ -1,54 +1,93 @@
-# Install — works on any agent surface
+# Install — every surface
 
-Tested in triplicate: **stdio** (official MCP SDK) and **HTTP/JSON-RPC**, plus a surface-independent logic harness (`node test.js`). Pick your surface.
+Two ways in. **Local (stdio)** for desktop/IDE agents, **Hosted (HTTP)** for web agents. Pick your host below.
 
-## Hosted (no install) — ChatGPT, web, any HTTP agent
-Point your agent's MCP/connector config at the hosted endpoint:
-```
-https://editions.rmwcommerce.com        (clean domain; falls back to the Vercel URL)
-```
-- **Health check:** `GET /` returns `{ ok, items, tools }`.
-- **Call a tool:** `POST /` JSON-RPC, e.g.
-  ```bash
-  curl -s https://editions.rmwcommerce.com -X POST \
-    -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"unreleased"}}'
-  ```
-- **ChatGPT:** Settings → Connectors / Developer mode → add an MCP server → paste the URL.
+---
 
-## Claude Desktop / Cursor / Cline / Windsurf (stdio)
-Add to the host's MCP config (`claude_desktop_config.json`, Cursor `mcp.json`, etc.):
+## The two configs you'll reuse
+
+**Local (stdio)** — one npx command, no clone, no build:
 ```json
-{
-  "mcpServers": {
-    "shopify-editions-spring26": {
-      "command": "npx",
-      "args": ["-y", "shopify-editions-spring26-mcp"]
-    }
-  }
-}
-```
-Or run from a local clone: `"command": "node", "args": ["/path/to/shopify-editions-spring26-mcp/server.js"]`.
-
-## Claude Code (one line)
-```bash
-claude mcp add shopify-editions-spring26 -- npx -y shopify-editions-spring26-mcp
-# or hosted:  claude mcp add --transport http shopify-editions-spring26 https://editions.rmwcommerce.com
+{ "command": "npx", "args": ["-y", "shopify-editions-spring26-mcp"] }
 ```
 
-## The tools
-| tool | for | example |
-|---|---|---|
-| `query{domain,topic,level,availability,confidence,verdict,text}` | everyone | `query{topic:"supply_chain"}` |
-| `get{id}` | full record + sources | `get{id:"ucp_protocol"}` |
-| `unreleased` | the vaporware cut (not live/GA) | — |
-| `deprecations` | system integrators (deadlines, migrations) | — |
-| `customers{merchant?}` | merchant proof + the conspicuous absences | — |
-| `methodology` | how it was built + corrections log | — |
-| `easter{name,id?}` | will_it_ship · time_capsule · receipts · steelman · hype_translator · goliath_paradox · whoami | `easter{name:"will_it_ship",id:"campaign_autopilot"}` |
+**Hosted (HTTP)** — one URL:
+```
+https://editions.rmwcommerce.com
+```
 
-## Verify it yourself
+---
+
+## Per surface
+
+### Claude Code
 ```bash
-npm install && node test.js            # logic, no transport
-node http.js & curl localhost:8787      # HTTP transport
-node test-stdio.js                      # stdio handshake (needs the SDK)
+claude mcp add shopify-editions -- npx -y shopify-editions-spring26-mcp
+# hosted instead:
+claude mcp add --transport http shopify-editions https://editions.rmwcommerce.com
+```
+
+### Claude Desktop
+Edit `claude_desktop_config.json` (Settings → Developer → Edit Config):
+```json
+{ "mcpServers": { "shopify-editions": { "command": "npx", "args": ["-y", "shopify-editions-spring26-mcp"] } } }
+```
+Restart Claude Desktop.
+
+### Cursor
+`~/.cursor/mcp.json` (or Settings → MCP):
+```json
+{ "mcpServers": { "shopify-editions": { "command": "npx", "args": ["-y", "shopify-editions-spring26-mcp"] } } }
+```
+
+### Cline / Roo (VS Code)
+MCP Servers panel → Configure → add the same `mcpServers` block.
+
+### Windsurf
+`~/.codeium/windsurf/mcp_config.json` → same `mcpServers` block.
+
+### Zed
+`settings.json` → `"context_servers": { "shopify-editions": { "command": { "path": "npx", "args": ["-y", "shopify-editions-spring26-mcp"] } } }`
+
+### Goose (Block)
+`goose configure` → Add Extension → Command-line (stdio) → `npx -y shopify-editions-spring26-mcp`.
+
+### VS Code (native MCP, 1.99+)
+`.vscode/mcp.json` → `{ "servers": { "shopify-editions": { "command": "npx", "args": ["-y", "shopify-editions-spring26-mcp"] } } }`
+
+### Continue.dev
+`config.yaml` → `mcpServers: [{ name: shopify-editions, command: npx, args: [-y, shopify-editions-spring26-mcp] }]`
+
+### ChatGPT (Developer mode / connectors)
+Settings → Connectors → add an MCP server → paste `https://editions.rmwcommerce.com`. (Hosted/HTTP only — ChatGPT doesn't run local stdio.)
+
+### Gemini CLI / other HTTP agents · n8n · Make · LibreChat
+Add an MCP/HTTP-tool pointing at `https://editions.rmwcommerce.com` (JSON-RPC `POST /`).
+
+### Raw HTTP (any language, no MCP client)
+```bash
+# list tools
+curl -s https://editions.rmwcommerce.com -X POST -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+# call one
+curl -s https://editions.rmwcommerce.com -X POST \
+  -d '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"unreleased"}}'
+# health
+curl -s https://editions.rmwcommerce.com
+```
+
+### From a local clone (no npm)
+```bash
+git clone https://github.com/watsonrm/shopify-editions-spring26-mcp && cd shopify-editions-spring26-mcp
+# stdio: point the host's "command":"node","args":["/abs/path/server.js"]
+# http:  node http.js   (serves on :8787)
+```
+
+---
+
+## Tools
+`query{domain,topic,level,availability,confidence,verdict,text}` · `get{id}` · `unreleased` · `deprecations` · `customers{merchant?}` · `methodology` · `easter{name,id?}`
+
+## Verify your install works
+```bash
+npm install && npm test
 ```

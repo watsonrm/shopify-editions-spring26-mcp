@@ -24,11 +24,21 @@ SOFTWARE.
 
 NOTICE — scope of this license:
 
-- The MIT grant above covers the CODE and the DATA STRUCTURE/SCHEMA in this
-  repository.
-- Factual statements about Shopify products are not copyrightable and carry no
-  restriction. Short quotations of Shopify materials are included as fair-use
-  excerpts for commentary and are property of their respective owner.
+- The MIT grant above covers the CODE, the DATA STRUCTURE/SCHEMA, and the
+  RMW-authored fields (`rick_lens`, analysis) ONLY. Third-party verbatim excerpts
+  (Shopify copy, merchant quotes) embedded in the data are NOT licensed by RMW —
+  reusers take them under their own fair-use analysis.
+- NO WARRANTY OF ACCURACY / NO RELIANCE. This is informational commentary provided
+  "as is." Verify every claim against Shopify's primary sources before relying on
+  it — especially deprecation deadlines and availability/GA status. RMW is not
+  liable for decisions made in reliance on this dataset.
+- ALL INFORMATION RIGHTS ARE DUE THEIR HOLDERS. All product information, feature
+  claims, names, descriptions, statistics, and quotations describing Shopify or
+  third-party products and merchants are the property of their respective rights
+  holders. Factual statements are not copyrightable; short quotations are included
+  as fair-use excerpts for commentary and criticism. Every claim is attributed to
+  its source(s) in each item and in SOURCES.md. No ownership of the underlying
+  information is claimed.
 - The OPINION layer — every `rick_lens` field (verdict, take, winners, losers,
   contrarian_read, watch_signal, etc.) — is the editorial work of Rick Watson /
   RMW Commerce. You may reuse it WITH ATTRIBUTION to Rick Watson.

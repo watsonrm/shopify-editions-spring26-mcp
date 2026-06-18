@@ -7,6 +7,10 @@ It doesn't claim every line is gospel — it tells you, per claim, exactly how m
 By [Rick Watson](https://rmwcommerce.com) / RMW Commerce.
 **Snapshot:** 2026-06-17 (Spring '26 release day) — `coming_soon`/`preview` items shift as Shopify ships them; re-run to refresh, or ask `time_capsule(id)` whether a forward-marker has landed.
 
+![Demo — one claim, corroborated across every doc surface](demo.gif)
+
+> See it run locally: `node demo.js doc_teaming` (or `node demo.js all`) — real `dispatch()` output, no faking.
+
 ---
 
 ## Use it in 30 seconds

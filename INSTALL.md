@@ -14,6 +14,7 @@ Two ways in. **Local (stdio)** for desktop/IDE agents, **Hosted (HTTP)** for web
 **Hosted (HTTP)** — one URL:
 ```
 https://editions.rmwcommerce.com
+direct (live now): https://shopify-editions-spring26-mcp-1649969634.us-central1.run.app
 ```
 
 ---

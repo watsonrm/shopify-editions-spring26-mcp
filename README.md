@@ -13,6 +13,7 @@ By [Rick Watson](https://rmwcommerce.com) / RMW Commerce.
 **Hosted — anything that speaks MCP over HTTP (ChatGPT, web agents, curl):**
 ```
 https://editions.rmwcommerce.com
+direct: https://shopify-editions-spring26-mcp-1649969634.us-central1.run.app
 ```
 
 **Local — Claude Desktop, Claude Code, Cursor, Cline, Windsurf, Zed, Goose, VS Code:**

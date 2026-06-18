@@ -1,0 +1,26 @@
+{
+  "name": "shopify-editions-spring26-mcp",
+  "version": "1.0.0",
+  "description": "MCP server: the verified, opinion-decorated map of Shopify Editions Spring '26. By Rick Watson / RMW Commerce.",
+  "type": "module",
+  "bin": {
+    "shopify-editions-spring26-mcp": "server.js"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "validate": "node -e \"const d=require('node:fs').readFileSync('dataset.json','utf8');const j=JSON.parse(d);console.log('ok',j.items.length,'items')\""
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0"
+  },
+  "license": "MIT",
+  "author": "Rick Watson <rick@rmwcommerce.com> (https://rmwcommerce.com)",
+  "keywords": [
+    "mcp",
+    "shopify",
+    "shopify-editions",
+    "agentic-commerce",
+    "ucp"
+  ]
+}
